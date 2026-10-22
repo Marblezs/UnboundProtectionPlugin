@@ -1,0 +1,14 @@
+wand:
+  material: GOLDEN_AXE
+  name: '&b&lUnbound &f- &eRegion Wand'
+  lore:
+    - '&7Click izquierdo: Posicion 1'
+    - '&7Click derecho: Posicion 2'
+
+settings:
+  protect-by-default: true
+  max-regions-per-player: 0
+  max-selection-blocks: 0
+
+messages:
+  prefix: '&8[&bUnboundProtection&8] &r'

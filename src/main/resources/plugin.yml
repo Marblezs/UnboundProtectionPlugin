@@ -1,0 +1,61 @@
+name: UnboundProtection
+description: Proteccion sencilla de mundos y regiones para Spigot y Arclight.
+version: '${project.version}'
+main: Unbound.unboundProtection.UnboundProtection
+api-version: '1.20'
+load: POSTWORLD
+authors: [Unbound]
+website: https://github.com/Marblezs
+commands:
+  up:
+    description: Administrar protecciones de UnboundProtection.
+    usage: /up
+    aliases: [unboundprotection, unboundp]
+permissions:
+  unboundprotection.use:
+    description: Usar los comandos basicos de UnboundProtection.
+    default: true
+  unboundprotection.wand:
+    description: Obtener y usar la wand de seleccion.
+    default: op
+  unboundprotection.region.create:
+    description: Crear regiones.
+    default: op
+  unboundprotection.region.delete:
+    description: Eliminar regiones.
+    default: op
+  unboundprotection.region.list:
+    description: Listar regiones.
+    default: op
+  unboundprotection.region.info:
+    description: Ver informacion de regiones.
+    default: op
+  unboundprotection.region.flag:
+    description: Modificar flags de regiones.
+    default: op
+  unboundprotection.region.members:
+    description: Administrar miembros de regiones.
+    default: op
+  unboundprotection.bypass:
+    description: Alternar el bypass de protecciones.
+    default: op
+  unboundprotection.reload:
+    description: Recargar la configuracion, las regiones y las protecciones globales.
+    default: op
+  unboundprotection.world.manage:
+    description: Modificar protecciones globales de mundos.
+    default: op
+  unboundprotection.admin:
+    description: Acceso completo de administracion.
+    default: op
+    children:
+      unboundprotection.wand: true
+      unboundprotection.region.create: true
+      unboundprotection.region.delete: true
+      unboundprotection.region.list: true
+      unboundprotection.region.info: true
+      unboundprotection.region.flag: true
+      unboundprotection.region.members: true
+      unboundprotection.bypass: true
+      unboundprotection.reload: true
+      unboundprotection.world.manage: true
