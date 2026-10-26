@@ -59,7 +59,7 @@ public final class ProtectionListener implements Listener {
         if (item == null || !item.hasItemMeta() || !item.getItemMeta().getPersistentDataContainer()
                 .has(plugin.wandKey(), PersistentDataType.BYTE)) return;
         if (!player.hasPermission("unboundprotection.wand") && !player.hasPermission("unboundprotection.admin")) {
-            player.sendMessage(plugin.message("&cNo tienes permiso para usar la wand."));
+            plugin.chat().send(player, "wand-use-denied");
             event.setCancelled(true);
             return;
         }
@@ -175,7 +175,7 @@ public final class ProtectionListener implements Listener {
         if (environmentBlocked(victim.getLocation(), ProtectionFlag.PVP, false)
                 || environmentBlocked(event.getDamager().getLocation(), ProtectionFlag.PVP, false)) {
             event.setCancelled(true);
-            attacker.sendMessage(plugin.message("&cEl PvP esta desactivado en esta region."));
+            plugin.chat().send(attacker, "pvp-disabled");
         }
     }
 
@@ -301,12 +301,12 @@ public final class ProtectionListener implements Listener {
     }
 
     private void deny(Player player, String action) {
-        player.sendMessage(plugin.message("&cNo tienes permiso para " + action + " aqui."));
+        plugin.chat().send(player, "protection-denied", action);
     }
 
     private void sendPosition(Player player, String index, Location location) {
-        player.sendMessage(plugin.message("&aPosicion &f" + index + " &amarcada en &f" + location.getBlockX() + ", "
-                + location.getBlockY() + ", " + location.getBlockZ() + " &7(mundo: " + location.getWorld().getName() + ")"));
+        plugin.chat().send(player, "selection-marked", index, String.valueOf(location.getBlockX()),
+                String.valueOf(location.getBlockY()), String.valueOf(location.getBlockZ()), location.getWorld().getName());
     }
 
     private Player getPlayerDamager(Entity entity) {

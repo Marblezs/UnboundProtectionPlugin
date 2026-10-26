@@ -1,6 +1,6 @@
 # UnboundProtection
 
-Plugin de proteccion de mundos y regiones, con foco en **Spigot 1.20.1** y compatibilidad prevista con Arclight 1.20.1. No requiere WorldGuard ni Multiverse.
+Plugin de proteccion de mundos y regiones, con foco en **Spigot 1.20.1** y compatibilidad prevista con Arclight 1.20.1. No requiere WorldGuard ni Multiverse. Incluye mensajes centralizados y personalizables mediante `ChatUtil`.
 
 ## Compatibilidad
 
@@ -103,9 +103,28 @@ Para `pvp`, `fall-damage`, `mob-spawning` y `hunger`, la flag se aplica como una
 | `unboundprotection.reload` | OP | Recargar archivos |
 | `unboundprotection.admin` | OP | Acceso completo; incluye los permisos anteriores |
 
-## Configuracion
+## Configuracion y mensajes
 
-`config.yml` permite cambiar material, nombre y lore de la wand, el prefijo, activar o desactivar la proteccion por defecto en nuevas regiones y limitar la cantidad de regiones por jugador o el volumen maximo de una seleccion (`0` significa sin limite).
+`config.yml` permite cambiar el material, nombre y lore de la wand, las restricciones por defecto de las regiones y los limites de creacion (`0` significa sin limite). Los mensajes se gestionan desde `util/ChatUtil.java` y sus textos se configuran en `messages.items`.
+
+```yaml
+messages:
+  enabled: true
+  prefix-enabled: true
+  prefix: '&8[&aUnbound&bProtection&8] &r'
+  items:
+    region-created:
+      enabled: true
+      text: '&aRegion &f%1% &acreada en el mundo &f%2%&a. Bloques: &f%3%&a.'
+```
+
+- `messages.enabled`: activa o desactiva todos los mensajes del plugin.
+- `messages.prefix-enabled`: permite quitar el prefijo con `false` o mostrarlo con `true`.
+- `messages.prefix`: cambia el texto y los colores del prefijo.
+- `messages.items.<clave>.text`: personaliza el mensaje. Los marcadores `%1%`, `%2%`, etc. se reemplazan por los valores de esa operación.
+- `messages.items.<clave>.enabled`: desactiva un mensaje concreto con `false`, útil para reducir spam. Cada mensaje también admite `prefix: false` para no repetir el prefijo en líneas de listas o detalles.
+
+Los valores nuevos se agregan a configuraciones existentes sin reemplazar los ajustes que ya hayas personalizado. Después de editar el archivo, usa `/up reload`.
 
 ## Notas de la primera version
 

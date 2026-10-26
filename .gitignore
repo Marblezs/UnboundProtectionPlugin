@@ -1,6 +1,42 @@
-target/
+# Build output
+/target/
+/build/
+/out/
+/dist/
+*.jar
+*.class
+*.log
+*.tmp
+*.bak
+
+# IDE settings
 .idea/
 *.iml
+.vscode/
+.gradle/
 .classpath
 .project
 .settings/
+
+# Local server files
+/run/
+/server/
+/logs/
+/crash-reports/
+/plugins/
+/world/
+/world_nether/
+/world_the_end/
+
+# Local configuration and secrets
+.env
+.env.*
+local.properties
+*.local
+*.key
+*.pem
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -11,4 +11,278 @@ settings:
   max-selection-blocks: 0
 
 messages:
-  prefix: '&8[&bUnboundProtection&8] &r'
+  enabled: true
+  prefix-enabled: true
+  prefix: '&8[&aUnbound&bProtection&8] &r'
+  items:
+    unknown-command:
+      enabled: true
+      text: '&cComando desconocido. Usa &f/up help&c.'
+    help-title:
+      enabled: true
+      text: '&bComandos disponibles:'
+    help-wand:
+      enabled: true
+      prefix: false
+      text: '&e/up wand &7- Obtener la wand de seleccion.'
+    help-position:
+      enabled: true
+      prefix: false
+      text: '&e/up pos1|pos2 &7- Marcar una posicion donde estas.'
+    help-expand:
+      enabled: true
+      prefix: false
+      text: '&e/up expandvert &7- Expandir la seleccion hasta toda la altura del mundo.'
+    help-create:
+      enabled: true
+      prefix: false
+      text: '&e/up create <nombre> [mundo] &7- Crear una region con la seleccion.'
+    help-delete:
+      enabled: true
+      prefix: false
+      text: '&e/up delete <region> &7- Eliminar una region.'
+    help-list:
+      enabled: true
+      prefix: false
+      text: '&e/up list [mundo] &7- Listar regiones.'
+    help-info:
+      enabled: true
+      prefix: false
+      text: '&e/up info [region] &7- Ver los detalles de una region.'
+    help-flag:
+      enabled: true
+      prefix: false
+      text: '&e/up flag <region|here> <flag> <on|off> &7- Ajustar protecciones.'
+    help-flags:
+      enabled: true
+      prefix: false
+      text: '&e/up flags &7- Mostrar todas las flags.'
+    help-member:
+      enabled: true
+      prefix: false
+      text: '&e/up member <add|remove> <region> <jugador> &7- Gestionar miembros.'
+    help-world:
+      enabled: true
+      prefix: false
+      text: '&e/up world <protect|unprotect|flag|flags|list> ... &7- Proteger mundos completos.'
+    help-bypass:
+      enabled: true
+      prefix: false
+      text: '&e/up bypass &7- Alternar tu bypass (requiere permiso).'
+    help-reload:
+      enabled: true
+      prefix: false
+      text: '&e/up reload &7- Recargar archivos.'
+    player-only:
+      enabled: true
+      text: '&cEste comando solo puede usarlo un jugador.'
+    wand-given:
+      enabled: true
+      text: '&aWand entregada. Click izquierdo: pos1; click derecho: pos2.'
+    selection-expand-missing:
+      enabled: true
+      text: '&cMarca pos1 y pos2 antes de expandir.'
+    selection-world-different:
+      enabled: true
+      text: '&cLas dos posiciones deben estar en el mismo mundo.'
+    selection-expanded:
+      enabled: true
+      text: '&aSeleccion expandida verticalmente en &f%1%&a.'
+    create-player-only:
+      enabled: true
+      text: '&cLa creacion requiere seleccionar pos1 y pos2 como jugador.'
+    create-usage:
+      enabled: true
+      text: '&cUso: /up create <nombre> [mundo]'
+    region-name-invalid:
+      enabled: true
+      text: '&cNombre invalido. Usa hasta 32 letras, numeros, guion o guion bajo.'
+    selection-missing:
+      enabled: true
+      text: '&cPrimero marca pos1 y pos2 con &f/up wand&c.'
+    selection-world-mismatch:
+      enabled: true
+      text: '&cLa seleccion pertenece al mundo &f%1%&c, no a &f%2%&c.'
+    region-exists:
+      enabled: true
+      text: '&cYa existe una region con ese nombre.'
+    region-limit:
+      enabled: true
+      text: '&cLlegaste al limite de regiones (&f%1%&c).'
+    region-too-large:
+      enabled: true
+      text: '&cLa region ocupa &f%1%&c bloques; el maximo es &f%2%&c.'
+    region-create-failed:
+      enabled: true
+      text: '&cNo se pudo crear la region.'
+    region-created:
+      enabled: true
+      text: '&aRegion &f%1% &acreada en el mundo &f%2%&a. Bloques: &f%3%&a.'
+    region-created-tip:
+      enabled: true
+      prefix: false
+      text: '&7Por defecto protege construccion, contenedores, fuego, fluidos, pistones y explosiones. Usa &f/up flags&7.'
+    delete-usage:
+      enabled: true
+      text: '&cUso: /up delete <region>'
+    region-not-found:
+      enabled: true
+      text: '&cNo existe esa region.'
+    region-delete-denied:
+      enabled: true
+      text: '&cSolo el propietario o un administrador puede eliminarla.'
+    region-deleted:
+      enabled: true
+      text: '&aRegion &f%1% &aeliminada.'
+    region-list-title:
+      enabled: true
+      text: '&bRegiones (&f%1%&b):'
+    region-list-empty:
+      enabled: true
+      text: '&7No hay regiones guardadas para este filtro.'
+    region-list-entry:
+      enabled: true
+      prefix: false
+      text: '&8- &e%1% &7| &f%2% &7| propietario: &f%3%'
+    region-info-console:
+      enabled: true
+      text: '&cDesde consola especifica una region: /up info <region>'
+    region-not-here:
+      enabled: true
+      text: '&7No estas dentro de ninguna region protegida.'
+    region-info-title:
+      enabled: true
+      text: '&bRegion &f%1% &7(mundo: &f%2%&7)'
+    region-info-owner:
+      enabled: true
+      prefix: false
+      text: '&7Propietario: &f%1% &8| &7Volumen: &f%2%'
+    region-info-bounds:
+      enabled: true
+      prefix: false
+      text: '&7Min: &f%1%, %2%, %3% &7Max: &f%4%, %5%, %6%'
+    region-info-flags:
+      enabled: true
+      prefix: false
+      text: '&7Flags activas: &f%1%'
+    region-info-members:
+      enabled: true
+      prefix: false
+      text: '&7Miembros: &f%1%'
+    region-flag-usage:
+      enabled: true
+      text: '&cUso: /up flag <region|here> <flag> <on|off>'
+    region-flag-console:
+      enabled: true
+      text: '&cUsa un nombre de region desde consola.'
+    region-overlap:
+      enabled: true
+      text: '&cHay varias regiones superpuestas. Especifica el nombre en /up flag <region> <flag> <on|off>.'
+    region-flag-not-found:
+      enabled: true
+      text: '&cNo se encontro la region. Si hay varias superpuestas, especifica su nombre.'
+    flag-unknown:
+      enabled: true
+      text: '&cFlag desconocida. Usa &f/up flags&c.'
+    flag-invalid-value:
+      enabled: true
+      text: '&cValor invalido. Usa &fon &co &foff&c.'
+    region-flag-denied:
+      enabled: true
+      text: '&cSolo el propietario o un administrador puede modificarla.'
+    region-flag-set:
+      enabled: true
+      text: '&aFlag &f%1% &ade &f%2% &aestablecida en %3%&a.'
+    flags-title:
+      enabled: true
+      text: '&bFlags disponibles (ON significa que se bloquea la accion):'
+    flag-entry:
+      enabled: true
+      prefix: false
+      text: '&e%1% &7- %2% &8(default: %3%)'
+    member-usage:
+      enabled: true
+      text: '&cUso: /up member <add|remove> <region> <jugador>'
+    member-manage-denied:
+      enabled: true
+      text: '&cSolo el propietario o un administrador puede gestionar miembros.'
+    player-unknown:
+      enabled: true
+      text: '&cNo se pudo identificar ese jugador.'
+    owner-already-has-access:
+      enabled: true
+      text: '&cEl propietario ya tiene acceso a la region.'
+    member-already:
+      enabled: true
+      text: '&eEse jugador ya es miembro.'
+    member-not-member:
+      enabled: true
+      text: '&eEse jugador no era miembro.'
+    member-added:
+      enabled: true
+      text: '&aAgregado &f%1% &aa la region &f%2%&a.'
+    member-removed:
+      enabled: true
+      text: '&aQuitado &f%1% &ade la region &f%2%&a.'
+    world-usage:
+      enabled: true
+      text: '&cUso: /up world <list|protect|unprotect|flags|flag> ...'
+    world-list-title:
+      enabled: true
+      text: '&bMundos cargados por Bukkit (incluye mundos cargados por Multiverse):'
+    world-list-entry:
+      enabled: true
+      prefix: false
+      text: '&8- &e%1% &7| flags globales activas: &f%2%'
+    world-action-usage:
+      enabled: true
+      text: '&cUso: /up world <protect|unprotect|flags> <mundo> o /up world flag <mundo> <flag> <on|off>'
+    world-not-loaded:
+      enabled: true
+      text: '&cEse mundo no esta cargado por Bukkit. Revisa el nombre con &f/up world list&c.'
+    world-protected:
+      enabled: true
+      text: '&aProteccion global activada para &f%1%&a. Se bloquearon construccion, interacciones, fuego, fluidos, pistones y explosiones.'
+    world-unprotected:
+      enabled: true
+      text: '&eSe desactivaron las flags globales de &f%1%&e. Las regiones individuales siguen funcionando.'
+    world-flags-title:
+      enabled: true
+      text: '&bFlags globales de &f%1%&b:'
+    world-flags-active:
+      enabled: true
+      prefix: false
+      text: '&7Activas: &f%1%'
+    world-flag-usage:
+      enabled: true
+      text: '&cUso: /up world flag <mundo> <flag> <on|off>'
+    world-flag-set:
+      enabled: true
+      text: '&aFlag global &f%1% &ade &f%2% &aestablecida en %3%&a.'
+    world-action-unknown:
+      enabled: true
+      text: '&cAccion desconocida. Usa &f/up world list&c.'
+    bypass-enabled:
+      enabled: true
+      text: '&7Bypass: &aACTIVADO'
+    bypass-disabled:
+      enabled: true
+      text: '&7Bypass: &cDESACTIVADO'
+    reload-complete:
+      enabled: true
+      text: '&aConfiguracion, regiones y protecciones de mundos recargadas.'
+    no-permission:
+      enabled: true
+      text: '&cNo tienes permiso: &f%1%'
+    selection-marked:
+      enabled: true
+      text: '&aPosicion &f%1% &amarcada en &f%2%, %3%, %4% &7(mundo: %5%)'
+    wand-use-denied:
+      enabled: true
+      text: '&cNo tienes permiso para usar la wand.'
+    pvp-disabled:
+      enabled: true
+      text: '&cEl PvP esta desactivado en esta region.'
+    protection-denied:
+      enabled: true
+      text: '&cNo tienes permiso para %1% aqui.'
